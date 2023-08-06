@@ -27,3 +27,7 @@ Solution:
     where violation_description like '%water' or
     violation_description like 'water%' or
     violation_description like '%water%';
+                      OR
+            select business_name, business_postal_code, violation_description
+            from sf_restaurant_health_violations
+            where violation_description regexp 'water';
