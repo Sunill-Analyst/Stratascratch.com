@@ -1,0 +1,27 @@
+--Find how many people registered in libraries in the year 2016.
+--Output the total patrons. Keep in mind that each row represents different patron.
+
+--Table: library_usage
+
+--patron_type_code: int
+--patron_type_definition: varchar
+--total_checkouts: int
+--total_renewals: int
+--age_range: varchar
+--home_library_code: varchar
+--home_library_definition: varchar
+--circulation_active_month: varchar
+-circulation_active_year: float
+--notice_preference_code: varchar
+--notice_preference_definition: varchar
+--provided_email_address: bool
+--year_patron_registered: int
+--outside_of_county: bool
+--supervisor_district: float
+
+--Solution:
+
+select count(patron_type_definition)
+from library_usage
+WHERE year_patron_registered = 2016;
+
