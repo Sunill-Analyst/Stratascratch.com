@@ -1,0 +1,26 @@
+--Calculate the total revenue made per book. Output the book ID and total sales per book. 
+--In case there is a book that has never been sold, include it in your output with a value of 0.
+
+--Tables: amazon_books
+         :amazon_books_order_details
+
+--Table: amazon_books
+
+--book_id: varchar
+--book_title: varchar
+--unit_price: int
+
+--Table: amazon_books_order_details
+
+--order_details_id: varchar
+--order_id: varchar
+--book_id: varchar
+--quantity: int
+
+--Solution:
+
+    select a.book_id, ifnull(a.unit_price * am.quantity, 0) as totalrevenue
+     from amazon_books a
+      left join amazon_books_order_details am on a.book_id=am.book_id
+      group by book_id
+        order by book_id;
