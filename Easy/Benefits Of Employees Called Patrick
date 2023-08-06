@@ -1,0 +1,27 @@
+--Find benefits that people with the name 'Patrick' have.
+--Output the employee name along with the corresponding benefits.
+
+--Table: sf_public_salaries
+
+--sf_public_salaries
+
+--id: int
+--employeename: varchar
+--jobtitle: varchar
+--basepay: float
+--overtimepay: float
+--otherpay: float
+--benefits: float
+--totalpay: float
+--totalpaybenefits: float
+--year: int
+--notes:datetime
+--agency: varchar
+--status: varchar 
+
+Solution:
+
+            select employeename, benefits from sf_public_salaries
+            where employeename like 'Patrick%' or 
+            employeename like '%Patrick' or 
+            employeename like '%Patrick%'; 
