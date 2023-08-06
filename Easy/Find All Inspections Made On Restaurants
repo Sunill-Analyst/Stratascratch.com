@@ -1,0 +1,28 @@
+--Find all inspections made on restaurants and output the business name and the inspection score.
+--For this question business is considered as a restaurant if it contains string "restaurant" inside its name.
+
+--Table: sf_restaurant_health_violations
+
+--business_id: int
+--business_name: varchar
+--business_address: varchar
+--business_city: varchar
+--business_state: varchar
+--business_postal_code: float
+--business_latitude: float
+--business_longitude: float
+--business_location: varchar
+--business_phone_number: float
+--inspection_id: varchar
+--inspection_date: datetime
+--inspection_score: float
+--inspection_type: varchar
+--violation_id: varchar
+--violation_description: varchar
+--risk_category: varchar
+
+--Solution:s
+
+      select business_name, inspection_score
+           from sf_restaurant_health_violations
+            where business_name regexp 'restaurant';
