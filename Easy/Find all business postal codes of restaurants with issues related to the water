@@ -1,0 +1,29 @@
+--Find all business postal codes of restaurants with issues related to the water (violation description contains substring "water").
+
+--Table: sf_restaurant_health_violations
+
+--business_id: int
+--business_name: varchar
+--business_address: varchar
+--business_city: varchar
+--business_state: varchar
+--business_postal_code: float
+--business_latitude: float
+--business_longitude: float
+--business_location: varchar
+--business_phone_number: float
+--inspection_id: varchar
+--inspection_date: datetime
+--inspection_score: float
+--inspection_type: varchar
+--violation_id: varchar
+--violation_description: varchar
+--risk_category: varchar
+
+Solution:
+
+    select business_name, business_postal_code, violation_description 
+    from sf_restaurant_health_violations
+    where violation_description like '%water' or
+    violation_description like 'water%' or
+    violation_description like '%water%';
