@@ -1,0 +1,19 @@
+
+--Find departments with less than 4 employees.
+
+--Output the department along with the corresponding number of workers.
+
+--Table: worker
+
+--worker_id: int
+--first_name: varchar
+--last_name: varchar
+--salary: int
+--joining_date: datetime
+--department: varchar
+
+--Solution:
+
+  select department, count(worker_id) as Total_employees from worker
+    group by department
+      having Total_employees < 4;
