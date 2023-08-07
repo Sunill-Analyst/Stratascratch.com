@@ -1,0 +1,23 @@
+
+
+--You have been asked to find employees in the HR department, and then output the result with one duplicate.
+
+--The employee's first name and department should be included in your output.
+
+--Note: This dataset does not contain any duplicates.
+
+--Table: worker
+
+--worker_id: int
+--first_name: varchar
+--last_name: varchar
+--salary: int
+--joining_date: datetime
+--department: varchar
+
+--Solution:
+
+    select first_name, count(first_name) as count_name, department from worker
+      where department = 'HR'
+      group by first_name
+        having count_name = 2;
