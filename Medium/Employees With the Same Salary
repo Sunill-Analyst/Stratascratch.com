@@ -1,0 +1,29 @@
+--Find employees who earn the same salary.
+
+--Output the worker id along with the first name and the salary in descending order.
+
+--Table: worker
+
+--worker_id:int
+--first_name: varchar
+--last_name: varchar
+--salary: int
+--joining_date: datetime
+--department: varchar
+
+--Solution
+
+     SELECT w1.first_name, w1.worker_id, w1.salary
+     FROM worker w1
+     INNER JOIN worker w2 ON w1.salary = w2.salary AND w1.first_name <> w2.first_name
+     order by salary desc;
+              OR
+
+SELECT first_name, Salary
+FROM worker 
+WHERE salary IN (
+    SELECT Salary
+    FROM worker
+    GROUP BY Salary
+    HAVING COUNT(*) > 1 )
+order by Salary desc;
