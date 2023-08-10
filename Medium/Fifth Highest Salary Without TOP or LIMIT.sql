@@ -22,5 +22,5 @@ Solution,
 
 select distinct salary from(
 select salary, dense_rank() 
-over(order by salary desc) 5th_highest_salary from worker)  as govd
+over(order by salary desc) 5th_highest_salary from worker)  as sal
 where 5th_highest_salary = 5;
