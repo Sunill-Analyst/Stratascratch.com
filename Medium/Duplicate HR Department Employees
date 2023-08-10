@@ -20,4 +20,4 @@
     select first_name, count(first_name) as count_name, department from worker
       where department = 'HR'
       group by first_name
-        having count_name = 2;
+        having count_name >= 2;
