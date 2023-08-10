@@ -1,5 +1,7 @@
 
 /*
+
+
 Find "favorite" customers based on the order count and the total cost of orders.
 A customer is considered as a favorite if he or she has placed more than 3 orders
 and with the total cost of orders more than $100.
