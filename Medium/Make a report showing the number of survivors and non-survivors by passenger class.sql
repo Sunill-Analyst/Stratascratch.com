@@ -29,9 +29,10 @@ embarked: varchar
 
 Solution,
 
-select pclass,
-       count(case when survived = 1 then survived end) as survivors,
-       count(case when survived = 0 then survived end) as non_survivors 
+select survived,
+        sum(case when pclass = 1 then 1 else 0 end) as first_class,
+        sum(case when  pclass = 2 then 1 else 0 end) as second_class,
+        sum(case when pclass = 3 then 1 else 0 end) as third_class
        from titanic
-group by pclass
+group by survived
 order by pclass;
